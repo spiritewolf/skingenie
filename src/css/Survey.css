@@ -1,22 +1,42 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: #727272;
+}
+
 *:before,
 *:after {
   box-sizing: border-box;
 }
-div .container {
+.container {
+  width: 85%;
+  margin: auto;
+  padding-top: 15px;
+}
+
+.s-container {
   padding: 10px;
   justify-content: center;
   align-items: center;
+  width: 75%;
+  margin: auto;
 }
-
+p {
+  font-size: 18px;
+  font-weight: 100;
+}
+/* f9e0eb */
 .radiogroup {
-  width: 55vw;
-  height: 80vh;
   padding: 48px 64px;
   border-radius: 16px;
-  background: #ecf0f3;
-  box-shadow: 4px 4px 4px 0px #d1d9e6 inset, -4px -4px 4px 0px #ffffff inset;
+  background: #fcf2f6;
+  box-shadow: 4px 4px 4px 0px #fae0eb inset, -4px -4px 4px 0px #ffffff inset;
 }
-
+.radiogroup h3 {
+  padding-bottom: 15px;
+}
 .wrapper {
   margin: 8px 0;
 }
@@ -47,7 +67,7 @@ div .container {
   border-radius: 50%;
   height: 30px;
   width: 30px;
-  box-shadow: -8px -4px 8px 0px #ffffff, 8px 4px 12px 0px #d1d9e6;
+  box-shadow: -8px -4px 8px 0px #ffffff, 8px 4px 12px 0px #fae0eb;
   overflow: hidden;
 }
 
@@ -63,12 +83,12 @@ div .container {
 }
 
 .indicator::before {
-  box-shadow: -4px -2px 4px 0px #d1d9e6, 4px 2px 8px 0px #fff;
+  box-shadow: -4px -2px 4px 0px #fae0eb, 4px 2px 8px 0px #fff;
 }
 
 .indicator::after {
-  background-color: #ecf0f3;
-  box-shadow: -4px -2px 4px 0px #fff, 4px 2px 8px 0px #d1d9e6;
+  background-color: #fcf2f6;
+  box-shadow: -4px -2px 4px 0px #fff, 4px 2px 8px 0px #fae0eb;
   transform: scale3d(1, 1, 1);
   transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
 }

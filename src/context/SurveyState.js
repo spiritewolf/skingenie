@@ -1,29 +1,43 @@
-import React from "react";
+import React, { useReducer, createContext } from "react";
+import SurveyReducer from "./SurveyReducer";
 
-export const SurveyContext = createContext({
-  name: "",
-  updateName: () => {},
-  selection: [],
-  updateSelection: () => {},
-});
+const initialState = {
+  responses: localStorage.getItem("responses"),
+  loading: false,
+};
+
+export const SurveyContext = createContext(initialState);
 
 export const SurveyProvider = ({ children }) => {
-  updateName = (newName) => {
-    this.setState({ name: newName });
-  };
-  updateSelection = (newSelection) => {
-    this.setState({ selection: newSelection });
-  };
+  const [state, dispatch] = useReducer(SurveyReducer, initialState);
 
-  state = {
-    name: "",
-    updateName: this.updateName,
-    selection: [],
-    updateSelection: this.updateSelection,
+  const getResponses = async (input) => {
+    const res = await input;
+    console.log(res);
+    localStorage.setItem("responses", res);
+    dispatch({
+      type: "GET_RESPONSE",
+      payload: res,
+    });
+    getResult();
+  };
+  const getResult = async () => {
+    const result = await state.responses;
+    if (result[0] == "a") {
+      console.log("YEAH BABY");
+    }
   };
 
   return (
-    <SurveyContext.Provider value={state}>{children}</SurveyContext.Provider>
+    <SurveyContext.Provider
+      value={{
+        responses: state.responses,
+        loading: state.loading,
+        getResponses,
+      }}
+    >
+      {children}
+    </SurveyContext.Provider>
   );
 };
 

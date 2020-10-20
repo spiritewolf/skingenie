@@ -1,0 +1,61 @@
+// background-color: #fff0f0;
+.f-container {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}
+footer {
+  padding-top: 25px;
+}
+footer p {
+  text-align: center;
+  font-size: 15px;
+}
+header {
+  display: flex;
+  width: 90%;
+  height: 10vh;
+  margin: auto;
+  background-color: mix(#fff, #db2571, 87%);
+  border-bottom-left-radius: 1vw;
+  border-bottom-right-radius: 1vw;
+  align-items: center;
+}
+header h1 {
+  flex: 1;
+  padding: 15px;
+  color: mix(#fff, #db2571, 86%);
+  font-size: 50px;
+  font-weight: 900;
+  text-shadow: -0.0075em 0.0075em 0 mix(#fff, #db2571, 94%),
+    0.005em 0.005em 0 mix(#fff, #db2571, 60%),
+    0.01em 0.01em 0 mix(#fff, #db2571, 62%),
+    0.015em 0.015em mix(#fff, #db2571, 64%),
+    0.02em 0.02em 0 mix(#fff, #db2571, 66%),
+    0.025em 0.025em 0 mix(#fff, #db2571, 68%),
+    0.03em 0.03em 0 mix(#fff, #db2571, 70%),
+    0.035em 0.035em 0 mix(#fff, #db2571, 72%);
+}
+.menuItems {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  flex: 3;
+}
+.nav-item {
+  padding: 14px;
+  padding: 15px;
+  color: mix(#fff, #db2571, 90%);
+  font-size: 25px;
+  font-weight: 900;
+  text-shadow: -0.0075em 0.0075em 0 mix(#fff, #db2571, 94%),
+    0.005em 0.005em 0 mix(#fff, #db2571, 60%),
+    0.01em 0.01em 0 mix(#fff, #db2571, 62%),
+    0.015em 0.015em mix(#fff, #db2571, 64%),
+    0.02em 0.02em 0 mix(#fff, #db2571, 66%),
+    0.025em 0.025em 0 mix(#fff, #db2571, 68%),
+    0.03em 0.03em 0 mix(#fff, #db2571, 70%),
+    0.035em 0.035em 0 mix(#fff, #db2571, 72%);
+}
