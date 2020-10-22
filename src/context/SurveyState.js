@@ -1,8 +1,10 @@
 import React, { useReducer, createContext } from "react";
 import SurveyReducer from "./SurveyReducer";
+import { resultData } from "./results";
 
 const initialState = {
   responses: localStorage.getItem("responses"),
+  result: "",
   loading: false,
 };
 
@@ -11,21 +13,27 @@ export const SurveyContext = createContext(initialState);
 export const SurveyProvider = ({ children }) => {
   const [state, dispatch] = useReducer(SurveyReducer, initialState);
 
-  const getResponses = async (input) => {
-    const res = await input;
+  const getResponses = async (score) => {
+    const res = await score;
     console.log(res);
     localStorage.setItem("responses", res);
     dispatch({
       type: "GET_RESPONSE",
       payload: res,
     });
-    getResult();
+    // getResult();
   };
-  const getResult = async () => {
-    const result = await state.responses;
-    if (result[0] == "a") {
-      console.log("YEAH BABY");
-    }
+  const getResults = async () => {
+    dispatch({
+      type: "LOAD_RESULTS",
+    });
+    const result = await resultData(state.responses);
+    dispatch({
+      type: "GET_RESULTS",
+      payload: result,
+    });
+    try {
+    } catch (err) {}
   };
 
   return (
@@ -33,7 +41,9 @@ export const SurveyProvider = ({ children }) => {
       value={{
         responses: state.responses,
         loading: state.loading,
+        result: state.result,
         getResponses,
+        getResults,
       }}
     >
       {children}

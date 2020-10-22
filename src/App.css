@@ -19,22 +19,41 @@ button {
 /* HOME PAGE */
 .main-sec {
   display: flex;
-  width: 90%;
+  width: 75%;
   margin: auto;
   min-height: 80vh;
   align-items: center;
+  justify-content: center;
+  animation: fade 2.5s ease;
 }
 .intro-container {
   flex: 1;
+  background-color: rgba(252, 252, 252, 0.7);
+  margin: 0px 50px 0px 0px;
+}
+.img-container img {
+  border-radius: 1vw;
+  position: absolute;
+  padding: 25px;
+  height: 75%;
+  top: 10%;
+  right: 10%;
+  z-index: -1;
+  opacity: 0.9;
 }
 .intro {
   font-size: 20px;
   font-weight: 100;
 }
 .intro h1 {
+  font-size: 40px;
   background: linear-gradient(to right, #898989, #c6c2c2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: drop 1.5s ease;
+}
+.intro p {
+  margin: 0;
 }
 .btn-container {
   padding: 50px 0px 0px 0px;
@@ -84,13 +103,162 @@ button {
   transform: translate3d(0, 0, -1em);
 }
 
+/* RESULT PAGE */
+.r-sec {
+  display: flex;
+  width: 75%;
+  margin: auto;
+  min-height: 80vh;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  animation: drop 1.5s ease;
+}
+.r-main {
+  padding: 15px;
+  margin-top: 25px;
+}
+.r-container {
+  display: flex;
+}
+.r-container h3 {
+  flex: 1;
+  font-size: 25px;
+  text-align: right;
+}
+.r-container p {
+  flex: 2;
+  font-size: 25px;
+  text-align: left;
+  padding-left: 20px;
+}
+
+@keyframes drop {
+  0% {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* SPINNER */
+.loader {
+  color: #d3d3d3;
+  font-size: 20px;
+  margin: 100px auto;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  animation: load4 1.3s infinite linear;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+@keyframes load4 {
+  0%,
+  100% {
+    box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+  }
+  12.5% {
+    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  25% {
+    box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0,
+      0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+  }
+  37.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em,
+      0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  50% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em,
+      0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  62.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+  }
+  75% {
+    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+  }
+  87.5% {
+    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em,
+      0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+  }
+}
+
 /* SURVEY CSS */
 
-@media screen and (max-width: 680px) {
-  .container {
-    flex-direction: column;
+@media screen and (max-width: 800px) {
+  /*home*/
+  * {
+    padding: 0;
+    margin: 0;
   }
-  /*nav*/
+  .intro h1 {
+    font-size: 30px;
+  }
+  .intro p {
+    font-size: 15px;
+  }
+  .intro-container {
+    margin: auto;
+    margin-top: 1vh;
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+    opacity: 85%;
+    overflow: scroll;
+  }
+  .btn-container {
+    margin: 1px;
+    padding: 8px;
+  }
+  .img-container {
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+  }
+
+  /*load*/
+  .r-sec p {
+    font-size: 15px;
+    text-align: center;
+  }
+  .r-sec h1 {
+    font-size: 30px;
+  }
+  .r-sec h3 {
+    font-size: 15px;
+    text-align: left;
+    padding: 5px;
+  }
+  .r-container p {
+    font-size: 15px;
+    text-align: right;
+    padding: 5px;
+  }
+  .r-sec {
+    width: 95%;
+  }
+  /* NAVIGATION */
   .line {
     width: 30px;
     height: 3px;
@@ -99,6 +267,9 @@ button {
   }
   nav {
     position: relative;
+  }
+  .header-link h1 {
+    font-size: 28px;
   }
   .hamburger {
     position: absolute;
@@ -141,20 +312,5 @@ button {
   }
   li.fade {
     opacity: 1;
-  }
-  header h1 {
-    font-size: 25px;
-  }
-
-  /*home*/
-  .intro-container {
-    margin-top: 5vh;
-    text-align: center;
-  }
-  .intro-container h1 {
-    font-size: 30px;
-  }
-  .intro-container p {
-    font-size: 18px;
   }
 }

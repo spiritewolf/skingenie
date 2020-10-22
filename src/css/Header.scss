@@ -44,6 +44,10 @@ header h1 {
   list-style: none;
   flex: 3;
 }
+/* nav-link is for react router Link*/
+.nav-link {
+  text-decoration: none;
+}
 .nav-item {
   padding: 14px;
   padding: 15px;
@@ -58,4 +62,7 @@ header h1 {
     0.025em 0.025em 0 mix(#fff, #db2571, 68%),
     0.03em 0.03em 0 mix(#fff, #db2571, 70%),
     0.035em 0.035em 0 mix(#fff, #db2571, 72%);
+}
+.nav-item:hover {
+  color: mix(#fff, #db2571, 62%);
 }

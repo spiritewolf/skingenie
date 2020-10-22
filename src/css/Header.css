@@ -32,7 +32,10 @@ header h1 {
   color: #fae0eb;
   font-size: 50px;
   font-weight: 900;
-  text-shadow: -0.0075em 0.0075em 0 #fdf2f6, 0.005em 0.005em 0 #f1a8c6, 0.01em 0.01em 0 #f1acc9, 0.015em 0.015em #f2b1cc, 0.02em 0.02em 0 #f3b5cf, 0.025em 0.025em 0 #f3b9d2, 0.03em 0.03em 0 #f4bed4, 0.035em 0.035em 0 #f5c2d7;
+  text-shadow: -0.0075em 0.0075em 0 #fdf2f6, 0.005em 0.005em 0 #f1a8c6,
+    0.01em 0.01em 0 #f1acc9, 0.015em 0.015em #f2b1cc, 0.02em 0.02em 0 #f3b5cf,
+    0.025em 0.025em 0 #f3b9d2, 0.03em 0.03em 0 #f4bed4,
+    0.035em 0.035em 0 #f5c2d7;
 }
 
 .menuItems {
@@ -42,13 +45,30 @@ header h1 {
   flex: 3;
 }
 
+/* nav-link is for react router Link*/
+.nav-link {
+  text-decoration: none;
+  flex: 3;
+}
+.header-link {
+  text-decoration: none;
+  flex: 1;
+}
+
 .nav-item {
   padding: 14px;
   padding: 15px;
   color: #fbe9f1;
   font-size: 25px;
   font-weight: 900;
-  text-shadow: -0.0075em 0.0075em 0 #fdf2f6, 0.005em 0.005em 0 #f1a8c6, 0.01em 0.01em 0 #f1acc9, 0.015em 0.015em #f2b1cc, 0.02em 0.02em 0 #f3b5cf, 0.025em 0.025em 0 #f3b9d2, 0.03em 0.03em 0 #f4bed4, 0.035em 0.035em 0 #f5c2d7;
+  text-shadow: -0.0075em 0.0075em 0 #fdf2f6, 0.005em 0.005em 0 #f1a8c6,
+    0.01em 0.01em 0 #f1acc9, 0.015em 0.015em #f2b1cc, 0.02em 0.02em 0 #f3b5cf,
+    0.025em 0.025em 0 #f3b9d2, 0.03em 0.03em 0 #f4bed4,
+    0.035em 0.035em 0 #f5c2d7;
+}
+
+.nav-item:hover {
+  color: #f1acc9;
 }
 
 /*# sourceMappingURL=Header.css.map */

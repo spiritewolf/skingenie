@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
+import skilli from "../imgs/skilli.PNG";
 
 export const Home = () => {
   return (
@@ -19,6 +20,9 @@ export const Home = () => {
             <button className="start-btn">Lets get started!</button>
           </Link>
         </div>
+      </div>
+      <div className="img-container">
+        <img src={skilli} />
       </div>
     </div>
   );

@@ -1,11 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../css/Header.css";
 
 export const Header = () => {
   return (
     <>
       <header>
-        <h1>Skin Genie</h1>
+        <Link className="header-link" to="/">
+          <h1>Skin Genie</h1>
+        </Link>
         <nav>
           <div className="hamburger">
             <div className="line"></div>
@@ -14,19 +17,25 @@ export const Header = () => {
           </div>
           <ul className="menuItems">
             <li>
-              <a className="nav-item" data-item="Home">
-                Home
-              </a>
+              <Link className="nav-link" to="/">
+                <p className="nav-item" data-item="Home">
+                  Home
+                </p>
+              </Link>
             </li>
             <li>
-              <a className="nav-item" data-item="About">
-                About
-              </a>
+              <Link className="nav-link" to="/survey">
+                <p className="nav-item" data-item="Questionairre">
+                  Questionairre
+                </p>
+              </Link>
             </li>
             <li>
-              <a className="nav-item" data-item="Contact">
-                Contact
-              </a>
+              <Link className="nav-link" to="/contact">
+                <p className="nav-item" data-item="Contact">
+                  Contact
+                </p>
+              </Link>
             </li>
           </ul>
         </nav>
