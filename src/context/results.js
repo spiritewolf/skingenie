@@ -89,3 +89,10 @@ export const resultData = (data) => {
     };
   }
 };
+
+const result = { a: "dry", b: "combo", c: "sensitive", d: "acne" };
+const tally = () => {
+  let type;
+  let concern;
+  let sensitive;
+};

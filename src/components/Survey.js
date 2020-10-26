@@ -9,18 +9,19 @@ export const Survey = () => {
   const [num, setNum] = useState(0);
   const [question, setQuestion] = useState(q);
   const [selection, setSelection] = useState("");
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState([]);
   let history = useHistory();
 
   const handleClick = (e) => {
-    const sum = option[num][selection].score;
-    setScore(score + sum);
     if (num == 5) {
       setNum(0);
-      getResponses(score);
+      getResponses(score.join(" "));
       history.push("/survey/loading");
     } else {
       setNum(num + 1);
+      const s = option[num][selection].score;
+      // console.log(score.join(" "));
+      return s == null ? null : setScore([...score, s]);
     }
   };
 
