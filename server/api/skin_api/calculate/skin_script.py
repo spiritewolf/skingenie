@@ -87,11 +87,8 @@ def get_results(json_string):
         result.append({list[i]['category'], list[i]['name'], list[i]['details']})
         i += 1
     result = ' '.join(map(str, result))
-    # print(result)
     return result
-    # return result
 
-# keywords = 'oily age sensitive'
 def start(keywords):
     words = get_recommendations(keywords)
     final_result = get_results(words)
