@@ -1,3 +1,3 @@
 ## SkinGenie
 
-In development. A website that generates a skincare routine for you based on a brief quiz. Engineered with React (so far).
+Developed with React and Django, the back end uses the Django Rest Framework, NumPy, Pandas, Natural Language Processing, and a Knowledge Based Recommendation system to generate a custom skincare routine from user input.
