@@ -1,15 +1,26 @@
-import React, { useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { SurveyContext } from "../context/SurveyState";
 import { useHistory } from "react-router-dom";
 
 import "../App.css";
 
 export const Result = () => {
-  const { result, getResults } = useContext(SurveyContext);
-  const history = useHistory();
+  const {
+    getResults,
+    result,
+    cleanser,
+    serum,
+    moisturizer,
+    sunscreen,
+  } = useContext(SurveyContext);
+  const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
     getResults();
+    setTimeout(() => {
+      setIsLoaded(true);
+    }, 3000);
   }, []);
+
   return (
     <div className="r-sec">
       {!result ? (
@@ -27,19 +38,23 @@ export const Result = () => {
           <div className="r-main">
             <div className="r-container">
               <h3>Cleanser:</h3>
-              <p>{result.cleanser}</p>
+              <p>{cleanser[0]}</p>
+              <p>{cleanser[1]}</p>
             </div>
             <div className="r-container">
               <h3>Serum:</h3>
-              <p>{result.serum}</p>
+              <p>{serum[0]}</p>
+              <p>{serum[1]}</p>
             </div>
             <div className="r-container">
               <h3>Moisturizer:</h3>
-              <p>{result.moisturizer}</p>
+              <p>{moisturizer[0]}</p>
+              <p>{moisturizer[1]}</p>
             </div>
             <div className="r-container">
               <h3>Sunscreen:</h3>
-              <p>{result.sunscreen}</p>
+              <p>{sunscreen[0]}</p>
+              <p>{sunscreen[1]}</p>
             </div>
           </div>
         </div>

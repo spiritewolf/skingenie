@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 import json
 
-from .models import Skincare
+from .models import SkinCare
 from .serializers import CalcSerializer, ResultSerializer
 from .calculate.skin_script import start
 
@@ -17,18 +17,15 @@ def appOverview(request):
 
 @api_view(['GET'])
 def list_result(request):
-    result = Skincare.objects.all()
-    serializer = ResultSerializer(result, many=True)
-    print(serializer.data)
+    data = SkinCare.objects.all()
+    serializer = ResultSerializer(data, many=True)
     return Response(serializer.data)
 
 @api_view(['POST'])
 def postSearch(request):
-    input = request.data
-    # print(input)
-    result = start(input)
-    # print(result)
-    serializer = ResultSerializer(data=result)
+    SkinCare.objects.all().delete()
+    data = start(request.data)
+    serializer = CalcSerializer(data=data)
     if serializer.is_valid():
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)

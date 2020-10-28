@@ -20,7 +20,6 @@ export const Survey = () => {
     } else {
       setNum(num + 1);
       const s = option[num][selection].score;
-      // console.log(score.join(" "));
       return s == null ? null : setScore([...score, s]);
     }
   };

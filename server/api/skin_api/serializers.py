@@ -1,14 +1,16 @@
 from rest_framework import serializers
-from .models import Skincare
+from rest_framework.fields import ListField
+from .models import SkinCare
 
 class CalcSerializer(serializers.ModelSerializer):
+    cleanser, serum, moisturizer, sunscreen = (ListField(required=False) for _ in range(4))
     class Meta:
-        model = Skincare
-        fields = ['id', 'input']
-        extra_kwargs = {'input': {'required': False}}
+        model = SkinCare
+        fields = ['cleanser', 'serum', 'moisturizer', 'sunscreen', 'details', 'name']
+        depth = 0
 
 class ResultSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Skincare
-        fields = ['result', 'input']
-        extra_kwargs = {'result': {'required': False}}
+        model = SkinCare
+        fields = ['cleanser', 'serum', 'moisturizer', 'sunscreen', 'name', 'details']
+        depth = 0

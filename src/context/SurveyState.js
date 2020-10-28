@@ -5,8 +5,12 @@ import * as api from "../api/apiconfig";
 import axios from "axios";
 
 const initialState = {
-  responses: localStorage.getItem("responses"),
+  responses: "",
   result: "",
+  cleanser: "",
+  serum: "",
+  moisturizer: "",
+  sunscreen: "",
   loading: false,
 };
 
@@ -16,31 +20,31 @@ export const SurveyProvider = ({ children }) => {
   const [state, dispatch] = useReducer(SurveyReducer, initialState);
 
   const getResults = async () => {
-    dispatch({
-      type: "LOAD_RESULTS",
-    });
-    try {
-      // const res = await axios.get(api.RESULT);
-      const result = await resultData(state.responses);
-      dispatch({
-        type: "GET_RESULTS",
-        payload: result,
-      });
-    } catch (err) {}
-  };
-
-  const getResponses = async (input) => {
-    const score = JSON.stringify(input);
-    console.log(score);
     const config = {
       headers: {
         "Content-Type": "application/json",
       },
     };
     try {
+      const res = await axios.get(api.RESULT, config);
+      dispatch({
+        type: "GET_RESULTS",
+        payload: res.data,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const getResponses = async (input) => {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    try {
+      const score = JSON.stringify(input);
       const res = await axios.post(api.INPUT, score, config);
-      // const res = await score;
-      // console.log(res);
       dispatch({
         type: "GET_RESPONSE",
         payload: res,
@@ -48,7 +52,6 @@ export const SurveyProvider = ({ children }) => {
     } catch (err) {
       console.log(err);
     }
-    // getResult();
   };
 
   return (
@@ -57,6 +60,10 @@ export const SurveyProvider = ({ children }) => {
         responses: state.responses,
         loading: state.loading,
         result: state.result,
+        cleanser: state.cleanser,
+        serum: state.serum,
+        moisturizer: state.moisturizer,
+        sunscreen: state.sunscreen,
         getResponses,
         getResults,
       }}

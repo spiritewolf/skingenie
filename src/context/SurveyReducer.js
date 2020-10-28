@@ -5,16 +5,15 @@ export default (state, action) => {
         ...state,
         responses: action.payload,
       };
-    case "LOAD_RESULTS":
-      return {
-        ...state,
-        loading: true,
-      };
     case "GET_RESULTS":
       return {
         ...state,
         loading: false,
         result: action.payload,
+        cleanser: action.payload[0].cleanser,
+        moisturizer: action.payload[0].moisturizer,
+        serum: action.payload[0].serum,
+        sunscreen: action.payload[0].sunscreen,
       };
     default:
       return state;

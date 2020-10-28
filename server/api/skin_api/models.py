@@ -1,7 +1,9 @@
 from django.db import models
 
-class Skincare(models.Model):
-    result = models.CharField(max_length=20000)
-
-
-# Create your models here.
+class SkinCare(models.Model):
+    cleanser = models.JSONField(max_length=800, default='')
+    moisturizer = models.JSONField(max_length=800, default='')
+    serum = models.JSONField(max_length=800, default='')
+    sunscreen = models.JSONField(max_length=800, default='')
+    name = models.CharField(max_length=800, default='')
+    details = models.CharField(max_length=800, default='')

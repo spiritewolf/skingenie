@@ -5,10 +5,9 @@ import { useHistory } from "react-router-dom";
 import "../App.css";
 
 export const LoadScreen = () => {
-  const { loading, getResults } = useContext(SurveyContext);
+  const { loading } = useContext(SurveyContext);
   const history = useHistory();
   useEffect(() => {
-    getResults();
     setTimeout(() => {
       if (!loading) {
         history.push("/results");

@@ -10,7 +10,7 @@ from collections import Counter
 import os
 
 from ..serializers import ResultSerializer
-from ..models import Skincare
+from ..models import SkinCare
 
 def cosine_similarity_of(text1, text2):
         #get words first
@@ -80,16 +80,24 @@ def get_recommendations(keywords):
 
 def get_results(json_string):
     list = json.loads(json_string)
-    result = []
-    max = len(list)
     i = 0
-    while i < max:
-        result.append({list[i]['category'], list[i]['name'], list[i]['details']})
+    # result = []
+    cleanser,serum,moisturizer,sunscreen = ('' for _ in range(4))
+    while i < len(list):
+        # result.append({'category': list[i]['category'], 'name': list[i]['name'], 'details': list[i]['details']})
+        if list[i]['category'] == 'cleanser':
+            cleanser = [list[i]['name'],list[i]['details']]
+        if list[i]['category'] == 'serum':
+            serum = [list[i]['name'],list[i]['details']]
+        if list[i]['category'] == 'moisturizer':
+            moisturizer = [list[i]['name'],list[i]['details']]
+        if list[i]['category'] == 'sunscreen':
+            sunscreen = [list[i]['name'],list[i]['details']]
         i += 1
-    result = ' '.join(map(str, result))
-    return result
+
+    return {'cleanser': cleanser, 'serum': serum, 'moisturizer': moisturizer,'sunscreen': sunscreen}
 
 def start(keywords):
     words = get_recommendations(keywords)
     final_result = get_results(words)
-    return {'result': final_result}
+    return final_result
