@@ -1,8 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { SurveyContext } from "../context/SurveyState";
 import { useHistory } from "react-router-dom";
-
-import "../App.css";
+import "../css/App.css";
 
 export const LoadScreen = () => {
   const { loading } = useContext(SurveyContext);
