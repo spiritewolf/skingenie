@@ -1,7 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap");
-/*old colors:
-#898989
-*/
 * {
   padding: 0;
   margin: 0;
@@ -27,10 +24,9 @@ button {
 /* HOME PAGE */
 .main-sec {
   display: flex;
-  width: 75%;
+  width: 80%;
   margin: 15px auto;
   min-height: 80vh;
-  background-color: #fcf5f4;
   animation: fade 2.5s ease;
 }
 
@@ -38,7 +34,6 @@ button {
   flex: 1;
   min-height: 80vh;
   padding: 25px;
-  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
   border-radius: 3px;
 }
 
@@ -53,7 +48,7 @@ button {
   float: right;
   padding: 25px;
   height: 55%;
-  top: 38%;
+  top: 35%;
   right: 20%;
   z-index: 2;
   opacity: 0.9;
@@ -62,13 +57,13 @@ button {
 .intro {
   font-size: 20px;
   font-weight: 100;
-  width: 80%;
   z-index: 6;
 }
 
 .intro h1 {
   font-size: 40px;
   animation: drop 0.5s ease;
+  text-align: center;
 }
 
 .intro p {

@@ -1,5 +1,5 @@
 /*home*/
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 862px) {
   * {
     padding: 0;
     margin: 0;
@@ -45,7 +45,7 @@
   }
 }
 /*SURVEY*/
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 862px) {
   .survey {
     width: 92%;
     margin: 0 auto;
@@ -158,7 +158,7 @@
 }
 
 /*NAVIGATION*/
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 862px) {
   .nav-container {
     position: relative;
     background-color: #fadcd9;

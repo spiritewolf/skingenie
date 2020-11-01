@@ -9,7 +9,7 @@ $mutedb: #dee2ec;
 $softp: #fadcd9;
 $rose: #f4a99f;
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 862px) {
   * {
     padding: 0;
     margin: 0;
@@ -52,7 +52,7 @@ $rose: #f4a99f;
 }
 
 /*SURVEY*/
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 862px) {
   .survey {
     width: 92%;
     margin: 0 auto;
@@ -160,7 +160,7 @@ $rose: #f4a99f;
 $items: 4;
 $transition-duration: 0.5s;
 $transition-delay: 0.05s;
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 862px) {
   .nav-container {
     position: relative;
     background-color: $softp;
