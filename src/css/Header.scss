@@ -1,3 +1,6 @@
+$maroon: #750f0f;
+$softp: #fcf4f4;
+
 .f-container {
   display: flex;
   width: 80%;
@@ -17,25 +20,19 @@ footer p {
   width: 90%;
   height: 10vh;
   margin: auto;
-  background-color: #fadcd9;
+  background-color: $maroon;
   border-bottom-left-radius: 1vw;
   border-bottom-right-radius: 1vw;
   align-items: center;
-}
-.h-container h1 {
-  flex: 1;
-  padding: 15px;
-  color: #fadcd9;
-  font-size: 50px;
-  font-weight: 900;
-  text-shadow: -0.0075em 0.0075em 0 mix(#fadcd9, #a3625d, 94%),
-    0.005em 0.005em 0 mix(#fadcd9, #a3625d, 60%),
-    0.01em 0.01em 0 mix(#fadcd9, #a3625d, 62%),
-    0.015em 0.015em mix(#fadcd9, #a3625d, 64%),
-    0.02em 0.02em 0 mix(#fadcd9, #a3625d, 66%),
-    0.025em 0.025em 0 mix(#fadcd9, #a3625d, 68%),
-    0.03em 0.03em 0 mix(#fadcd9, #a3625d, 70%),
-    0.035em 0.035em 0 mix(#fadcd9, #a3625d, 72%);
+  justify-content: space-between;
+  h1 {
+    flex: 1;
+    padding: 15px;
+    color: #fff;
+    font-size: 50px;
+    font-weight: 900;
+    text-shadow: 5px 0px 0 #4c0202;
+  }
 }
 .menu-items {
   display: flex;
@@ -44,22 +41,15 @@ footer p {
 .h-item {
   padding: 14px;
   padding: 15px;
-  color: #f4a99f;
+  color: $softp;
   font-size: 25px;
   font-weight: 400;
-  text-shadow: -0.0075em 0.0075em 0 mix(#fff, #f4a99f, 94%),
-    0.005em 0.005em 0 mix(#fff, #f4a99f, 60%),
-    0.01em 0.01em 0 mix(#fff, #f4a99f, 62%),
-    0.015em 0.015em mix(#fff, #f4a99f, 64%),
-    0.02em 0.02em 0 mix(#fff, #f4a99f, 66%),
-    0.025em 0.025em 0 mix(#fff, #f4a99f, 68%),
-    0.03em 0.03em 0 mix(#fff, #f4a99f, 70%),
-    0.035em 0.035em 0 mix(#fff, #f4a99f, 72%);
+  text-shadow: -5px 0px 0 #4c0202;
 }
 .h-item:hover {
   color: #dee2ec;
 }
-/* nav-link is for react router Link*/
+
 .header-link {
   text-decoration: none;
 }

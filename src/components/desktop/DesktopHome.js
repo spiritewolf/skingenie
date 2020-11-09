@@ -7,7 +7,7 @@ export const DesktopHome = () => {
   return (
     <div className="main-sec">
       <div className="intro-container">
-        <div className="intro">
+        <div className="intro" aria-label="Site Description">
           <h1> Welcome! Lets get your skincare routine together</h1>
           <p>
             Skin Genie is a tool created to help you perfect your skincare
@@ -16,11 +16,13 @@ export const DesktopHome = () => {
           </p>
         </div>
         <div className="img-container">
-          <img src={skilli} />
+          <img src={skilli} aria-label="Illustration of Skincare Products" />
         </div>
         <div className="btn-container">
           <Link to="/survey">
-            <button className="start-btn">Lets get started!</button>
+            <button className="start-btn" aria-label="Start button">
+              Lets get started!
+            </button>
           </Link>
         </div>
       </div>

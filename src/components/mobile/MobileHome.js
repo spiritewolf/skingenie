@@ -6,7 +6,7 @@ export const MobileHome = () => {
   return (
     <div className="container">
       <div className="main-container">
-        <div className="text-section">
+        <div className="text-section" aria-label="Site Description">
           <h1> Welcome! Lets get your skincare routine together</h1>
           <p>
             Skin Genie is a tool created to help you perfect your skincare
@@ -16,7 +16,9 @@ export const MobileHome = () => {
         </div>
         <div className="btn-container">
           <Link to="/survey">
-            <button className="start-btn">Lets get started!</button>
+            <button className="start-btn" aria-label="Start button">
+              Lets get started!
+            </button>
           </Link>
         </div>
       </div>

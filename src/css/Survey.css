@@ -45,10 +45,10 @@ h4 {
 }
 
 input[type=radio] {
-  --active: #dee2ec;
+  --active: #75420f;
   --active-inner: #fff;
-  --focus: 2px rgba(39, 94, 254, 0.3);
-  --border: #dee2ec;
+  --focus: 2px rgba(168, 96, 25, 0.3);
+  --border: #75420f;
   --border-hover: #f4a99f;
   --background: #fff;
   -webkit-appearance: none;

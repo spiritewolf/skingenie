@@ -37,24 +37,24 @@ export const MobileResult = () => {
             </p>
           </div>
           <div className="main-container">
-            <div className="result">
+            <div className="result" aria-label="Cleanser recommendation">
               <h3>Cleanser:</h3>
               <div className="result-c">
                 <p>{cleanser[0]}</p>
                 <p>{cleanser[1]}</p>
               </div>
               <h3>Serum:</h3>
-              <div className="result-c">
+              <div className="result-c" aria-label="Serum recommendation">
                 <p>{serum[0]}</p>
                 <p>{serum[1]}</p>
               </div>
               <h3>Moisturizer:</h3>
-              <div className="result-c">
+              <div className="result-c" aria-label="Moisturizer recommendation">
                 <p>{moisturizer[0]}</p>
                 <p>{moisturizer[1]}</p>
               </div>
               <h3>Sunscreen:</h3>
-              <div className="result-c">
+              <div className="result-c" aria-label="Sunscreen recommendation">
                 <p>{sunscreen[0]}</p>
                 <p>{sunscreen[1]}</p>
               </div>

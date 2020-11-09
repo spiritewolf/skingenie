@@ -15,7 +15,12 @@ export const LoadScreen = () => {
   }, [loading, history]);
   return (
     <div className="main-sec">
-      <div className="intro">
+      <div
+        className="intro"
+        aria-live="polite"
+        aria-automatic="true"
+        aria-label="Loading..."
+      >
         <h1>Give us a sec while we create your routine!</h1>
         <div className="loader">Loading...</div>
       </div>

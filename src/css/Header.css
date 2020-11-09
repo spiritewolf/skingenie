@@ -20,19 +20,19 @@ footer p {
   width: 90%;
   height: 10vh;
   margin: auto;
-  background-color: #fadcd9;
+  background-color: #750f0f;
   border-bottom-left-radius: 1vw;
   border-bottom-right-radius: 1vw;
   align-items: center;
+  justify-content: space-between;
 }
-
 .h-container h1 {
   flex: 1;
   padding: 15px;
-  color: #fadcd9;
+  color: #fff;
   font-size: 50px;
   font-weight: 900;
-  text-shadow: -0.0075em 0.0075em 0 #f5d5d2, 0.005em 0.005em 0 #d7aba7, 0.01em 0.01em 0 #d9aeaa, 0.015em 0.015em #dbb0ac, 0.02em 0.02em 0 #dcb3af, 0.025em 0.025em 0 #deb5b1, 0.03em 0.03em 0 #e0b7b4, 0.035em 0.035em 0 #e2bab6;
+  text-shadow: 5px 0px 0 #4c0202;
 }
 
 .menu-items {
@@ -43,17 +43,16 @@ footer p {
 .h-item {
   padding: 14px;
   padding: 15px;
-  color: #f4a99f;
+  color: #fcf4f4;
   font-size: 25px;
   font-weight: 400;
-  text-shadow: -0.0075em 0.0075em 0 #fefaf9, 0.005em 0.005em 0 #fbddd9, 0.01em 0.01em 0 #fbdedb, 0.015em 0.015em #fbe0dc, 0.02em 0.02em 0 #fbe2de, 0.025em 0.025em 0 #fbe3e0, 0.03em 0.03em 0 #fce5e2, 0.035em 0.035em 0 #fce7e4;
+  text-shadow: -5px 0px 0 #4c0202;
 }
 
 .h-item:hover {
   color: #dee2ec;
 }
 
-/* nav-link is for react router Link*/
 .header-link {
   text-decoration: none;
 }

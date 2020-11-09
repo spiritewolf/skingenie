@@ -46,6 +46,7 @@ export const DesktopSurvey = () => {
               name="app"
               id="a"
               value="a"
+              aria-label="Option A"
             />
             <label className="label" htmlFor="a">
               <div className="indicator"></div>
@@ -60,6 +61,7 @@ export const DesktopSurvey = () => {
               name="app"
               id="b"
               value="b"
+              aria-label="Option B"
             />
             <label className="label" htmlFor="b">
               <div className="indicator"></div>
@@ -74,6 +76,7 @@ export const DesktopSurvey = () => {
               name="app"
               id="c"
               value="c"
+              aria-label="Option C"
             />
             <label className="label" htmlFor="c">
               <div className="indicator"></div>
@@ -88,13 +91,18 @@ export const DesktopSurvey = () => {
               name="app"
               id="d"
               value="d"
+              aria-label="Option D"
             />
             <label className="label" htmlFor="d">
               <div className="indicator"></div>
               <span className="text">{option[num].d.text}</span>
             </label>
           </div>
-          <button onClick={(e) => handleClick(e)} className="start-btn">
+          <button
+            onClick={(e) => handleClick(e)}
+            className="start-btn"
+            aria-label="Next Question Button"
+          >
             Next
           </button>
         </div>

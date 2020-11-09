@@ -6,9 +6,12 @@ $babyb: #e7f2f8;
 $fresia: #efe7bc;
 
 $text: #494548;
-$mutedb: #dee2ec;
-$softp: #fadcd9;
+$mutedb: #d69453;
+$softp: #fcf4f4;
 $rose: #f4a99f;
+
+$maroon: #750f0f;
+$forange: #ce8031;
 
 * {
   padding: 0;
@@ -18,7 +21,7 @@ $rose: #f4a99f;
 body {
   font-family: "Poppins", sans-serif;
   color: $text;
-  background: $mutedb;
+  background: $softp;
 }
 button {
   position: relative;
@@ -79,7 +82,7 @@ button {
 }
 .start-btn {
   padding: 1.25em 2em;
-  border: 2px solid #bdc2cc;
+  border: 2px solid $maroon;
   border-radius: 0.75em;
   font-weight: 700;
   color: $text;
@@ -99,17 +102,18 @@ button {
   height: 100%;
   border-radius: inherit;
   background: $mutedb;
-  box-shadow: 0 0 0 2px #bdc2cc, 0 0.625em 0 0 #ffe3e2;
+  box-shadow: 0 0 0 2px $maroon, 0 0.625em 0 0 $forange;
   transform: translate3d(0, 0.75em, -1em);
   transition: 0.15s cubic-bezier(0, 0, 0.6, 1);
 }
 .start-btn:hover {
-  background: #bdc2cc;
+  background: $maroon;
+  color: #fff;
   transform: translate(0, 0.25em);
 }
 
 .start-btn:hover::before {
-  box-shadow: 0 0 0 2px #bdc2cc, 0 0.5em 0 0 #ffe3e2;
+  box-shadow: 0 0 0 2px $maroon, 0 0.5em 0 0 $forange;
   transform: translate3d(0, 0.5em, -1em);
 }
 .start-btn:active {
@@ -118,7 +122,7 @@ button {
 }
 
 .start-btn:active::before {
-  box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
+  box-shadow: 0 0 0 2px $maroon, 0 0 $forange;
   transform: translate3d(0, 0, -1em);
 }
 
@@ -175,7 +179,7 @@ button {
 
 /* SPINNER */
 .loader {
-  color: #d3d3d3;
+  color: $forange;
   font-size: 20px;
   margin: 100px auto;
   width: 1em;

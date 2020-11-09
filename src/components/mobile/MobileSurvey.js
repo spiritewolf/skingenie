@@ -13,14 +13,19 @@ export const MobileSurvey = () => {
   let history = useHistory();
 
   const handleClick = (e) => {
+    //if selection is empty, notify the user to choose an option
     if (!selection) {
       e.preventDefault();
       alert("Please select an option");
     } else if (num == 5) {
+      // if all 5 questions answered, set num to 0 to prevent error on reload
+      //join score into a string and launch the load screen
       setNum(0);
       getResponses(score.join(" "));
       history.push("/survey/loading");
     } else {
+      //else increment the number for next question
+      //set the score by determining that the score isn't null
       setNum(num + 1);
       const s = option[num][selection].score;
       return s == null ? null : setScore([...score, s]);
@@ -51,6 +56,7 @@ export const MobileSurvey = () => {
               name="app"
               id="a"
               value="a"
+              aria-label="Option A"
             />
             <label className="label" htmlFor="a">
               <span className="text">{option[num].a.text}</span>
@@ -64,6 +70,7 @@ export const MobileSurvey = () => {
               name="app"
               id="b"
               value="b"
+              aria-label="Option B"
             />
             <label className="label" htmlFor="b">
               <span className="text">{option[num].b.text}</span>
@@ -77,6 +84,7 @@ export const MobileSurvey = () => {
               name="app"
               id="c"
               value="c"
+              aria-label="Option C"
             />
             <label className="label" htmlFor="c">
               <span className="text">{option[num].c.text}</span>
@@ -90,12 +98,17 @@ export const MobileSurvey = () => {
               name="app"
               id="d"
               value="d"
+              aria-label="Option D"
             />
             <label className="label" htmlFor="d">
               <span className="text">{option[num].d.text}</span>
             </label>
           </div>
-          <button onClick={(e) => handleClick(e)} className="start-btn">
+          <button
+            onClick={(e) => handleClick(e)}
+            className="start-btn surv"
+            aria-label="Next Question Button"
+          >
             Next
           </button>
         </div>

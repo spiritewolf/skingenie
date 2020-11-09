@@ -35,22 +35,25 @@ export const DesktopResult = () => {
             ensure they will work for you!
           </p>
           <div className="r-main">
-            <div className="r-container">
+            <div className="r-container" aria-label="Cleanser recommendation">
               <h3>Cleanser:</h3>
               <p>{cleanser[0]}</p>
               <p>{cleanser[1]}</p>
             </div>
-            <div className="r-container">
+            <div className="r-container" aria-label="Serum recommendation">
               <h3>Serum:</h3>
               <p>{serum[0]}</p>
               <p>{serum[1]}</p>
             </div>
-            <div className="r-container">
+            <div
+              className="r-container"
+              aria-label="Moisturizer recommendation"
+            >
               <h3>Moisturizer:</h3>
               <p>{moisturizer[0]}</p>
               <p>{moisturizer[1]}</p>
             </div>
-            <div className="r-container">
+            <div className="r-container" aria-label="Sunscreen recommendation">
               <h3>Sunscreen:</h3>
               <p>{sunscreen[0]}</p>
               <p>{sunscreen[1]}</p>
