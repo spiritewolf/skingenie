@@ -1,6 +1,5 @@
 import React, { useReducer, createContext } from "react";
 import SurveyReducer from "./SurveyReducer";
-import { resultData } from "./results";
 import * as api from "../api/apiconfig";
 import axios from "axios";
 
@@ -11,7 +10,6 @@ const initialState = {
   serum: "",
   moisturizer: "",
   sunscreen: "",
-  loading: false,
 };
 
 export const SurveyContext = createContext(initialState);
@@ -58,7 +56,6 @@ export const SurveyProvider = ({ children }) => {
     <SurveyContext.Provider
       value={{
         responses: state.responses,
-        loading: state.loading,
         result: state.result,
         cleanser: state.cleanser,
         serum: state.serum,

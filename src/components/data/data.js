@@ -46,7 +46,7 @@ export const option = {
   5: {
     a: { text: "Daily, with multiple reapplications", score: null },
     b: { text: "Daily, but I forget to reapply", score: null },
-    c: { text: "Only when I need to or when I'm in the sun", score: null },
-    d: { text: "Rarely, if ever", score: null },
+    c: { text: "Only when I need to or when I'm in the sun", score: "sun" },
+    d: { text: "Rarely, if ever", score: "sun" },
   },
 };

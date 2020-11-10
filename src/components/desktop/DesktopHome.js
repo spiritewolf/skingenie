@@ -1,29 +1,32 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "../../css/App.css";
-import skilli from "../../imgs/skilli.PNG";
 
 export const DesktopHome = () => {
   return (
     <div className="main-sec">
       <div className="intro-container">
+        <h1>Skin Genie, acheive your ideal skin.</h1>
         <div className="intro" aria-label="Site Description">
-          <h1> Welcome! Lets get your skincare routine together</h1>
+          <h2> Lets get your skin care routine together!</h2>
           <p>
-            Skin Genie is a tool created to help you perfect your skincare
-            routine. After filling out a brief survey, our algorithm will
-            suggest you the best product line-up for the job.
+            <strong>What it is: </strong>Skin Genie is a tool created to help
+            you perfect your skincare routine. No magic, just skincare!
           </p>
-        </div>
-        <div className="img-container">
-          <img src={skilli} aria-label="Illustration of Skincare Products" />
-        </div>
-        <div className="btn-container">
-          <Link to="/survey">
-            <button className="start-btn" aria-label="Start button">
-              Lets get started!
-            </button>
-          </Link>
+          <p>
+            <strong>How it works: </strong> We've created a brief questionairre
+            for you to fill out. It will assess your skin type, skin concerns,
+            and skin goals. Once you've filled that out it is processed through
+            our recommendation algorithm to pair you up with the best product
+            line-up for the job!
+          </p>
+          <div className="btn-container">
+            <Link to="/survey">
+              <button className="start-btn" aria-label="Start button">
+                Lets get started!
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

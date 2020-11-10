@@ -13,7 +13,10 @@ export const DesktopSurvey = () => {
   let history = useHistory();
 
   const handleClick = (e) => {
-    if (num == 5) {
+    if (!selection) {
+      e.preventDefault();
+      alert("Please select an option");
+    } else if (num == 5) {
       setNum(0);
       getResponses(score.join(" "));
       history.push("/survey/loading");

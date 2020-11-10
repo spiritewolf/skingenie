@@ -26,53 +26,47 @@ button {
   display: flex;
   width: 80%;
   margin: 15px auto;
-  min-height: 80vh;
+  background-color: #fcf5f4;
   animation: fade 2.5s ease;
 }
 
 .intro-container {
-  flex: 1;
   min-height: 80vh;
   padding: 25px;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
   border-radius: 3px;
 }
-
-.img-container {
-  text-align: right;
-  display: inline;
-}
-
-.img-container img {
-  border-radius: 1vw;
-  position: absolute;
-  float: right;
-  padding: 25px;
-  height: 55%;
-  top: 35%;
-  right: 20%;
-  z-index: 2;
-  opacity: 0.9;
+.intro-container h1 {
+  font-size: 40px;
+  animation: drop 0.5s ease;
+  text-align: center;
+  color: #750f0f;
 }
 
 .intro {
   font-size: 20px;
   font-weight: 100;
-  z-index: 6;
-}
-
-.intro h1 {
-  font-size: 40px;
-  animation: drop 0.5s ease;
+  width: 80%;
   text-align: center;
+  margin: 15px auto;
 }
-
 .intro p {
   margin: 0;
   color: #494548;
 }
+.intro h2 {
+  padding: 15px;
+}
+.intro strong {
+  color: #ce8031;
+}
 
+/* button*/
 .btn-container {
-  padding: 50px 0px 0px 0px;
+  display: flex;
+  margin: 20px 0;
+  justify-content: center;
+  align-items: center;
 }
 
 .start-btn {
@@ -86,7 +80,6 @@ button {
   transform-style: preserve-3d;
   transition: 0.15s cubic-bezier(0, 0, 0.6, 1);
 }
-
 .start-btn::before {
   content: "";
   position: absolute;
@@ -102,23 +95,19 @@ button {
   transform: translate3d(0, 0.75em, -1em);
   transition: 0.15s cubic-bezier(0, 0, 0.6, 1);
 }
-
 .start-btn:hover {
   background: #750f0f;
   color: #fff;
   transform: translate(0, 0.25em);
 }
-
 .start-btn:hover::before {
   box-shadow: 0 0 0 2px #750f0f, 0 0.5em 0 0 #ce8031;
   transform: translate3d(0, 0.5em, -1em);
 }
-
 .start-btn:active {
   background: #ffe9e9;
   transform: translate(0, 0.75em);
 }
-
 .start-btn:active::before {
   box-shadow: 0 0 0 2px #750f0f, 0 0 #ce8031;
   transform: translate3d(0, 0, -1em);
@@ -178,7 +167,15 @@ button {
     opacity: 1;
   }
 }
-/* SPINNER */
+/* SPINNER/LOAD SCREEN */
+.load {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
 .loader {
   color: #ce8031;
   font-size: 20px;

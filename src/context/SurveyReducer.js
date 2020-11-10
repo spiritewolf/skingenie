@@ -8,7 +8,6 @@ export default (state, action) => {
     case "GET_RESULTS":
       return {
         ...state,
-        loading: false,
         result: action.payload,
         cleanser: action.payload[0].cleanser,
         moisturizer: action.payload[0].moisturizer,

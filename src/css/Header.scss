@@ -1,5 +1,8 @@
 $maroon: #750f0f;
 $softp: #fcf4f4;
+$text: #494548;
+$mutedb: #d69453;
+$rose: #ce8031;
 
 .f-container {
   display: flex;
@@ -15,44 +18,350 @@ footer p {
   text-align: center;
   font-size: 15px;
 }
-.h-container {
-  display: flex;
-  width: 90%;
-  height: 10vh;
-  margin: auto;
-  background-color: $maroon;
-  border-bottom-left-radius: 1vw;
-  border-bottom-right-radius: 1vw;
-  align-items: center;
-  justify-content: space-between;
-  h1 {
-    flex: 1;
-    padding: 15px;
-    color: #fff;
-    font-size: 50px;
-    font-weight: 900;
-    text-shadow: 5px 0px 0 #4c0202;
-  }
-}
-.menu-items {
-  display: flex;
-  list-style: none;
-}
-.h-item {
-  padding: 14px;
-  padding: 15px;
-  color: $softp;
-  font-size: 25px;
-  font-weight: 400;
-  text-shadow: -5px 0px 0 #4c0202;
-}
-.h-item:hover {
-  color: #dee2ec;
-}
 
+$items: 4;
+$transition-duration: 0.5s;
+$transition-delay: 0.05s;
+.nav-container {
+  position: relative;
+  background-color: $softp;
+  overflow: hidden;
+}
+.nav-bar {
+  float: right;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 15px;
+}
+header h1 {
+  font-size: 35px;
+  color: $rose;
+}
 .header-link {
   text-decoration: none;
 }
-.h-link {
-  text-decoration: none;
+#toggle {
+  display: none;
+}
+#toggle:checked {
+  & ~ .toggle-container .button-toggle {
+    box-shadow: 0 0 0 500px rgba(252, 245, 244, 0.1),
+      inset 0 0 0 20px rgba(252, 245, 244, 0.1);
+
+    &:before {
+      -webkit-transform: translateY(-50%) rotate(45deg) scale(1);
+      -moz-transform: translateY(-50%) rotate(45deg) scale(1);
+      transform: translateY(-50%) rotate(45deg) scale(1);
+    }
+
+    &:after {
+      -webkit-transform: translateY(-50%) rotate(-45deg) scale(1);
+      -moz-transform: translateY(-50%) rotate(-45deg) scale(1);
+      transform: translateY(-50%) rotate(-45deg) scale(1);
+    }
+  }
+
+  & ~ .nav {
+    margin-bottom: 50px;
+    pointer-events: auto;
+    -webkit-transform: translate(20px, 20px);
+    -moz-transform: translate(20px, 20px);
+    transform: translate(20px, 20px);
+    .nav-item {
+      color: $rose;
+      letter-spacing: 0;
+      height: 30px;
+      line-height: 40px;
+      margin-top: 0;
+      opacity: 1;
+      transform: scaleY(1);
+      transition: $transition-duration, opacity 0.1s;
+
+      @for $i from 1 through $items {
+        &:nth-child(#{$i}) {
+          $delay: ($items - $i) * $transition-delay;
+          transition-delay: $delay;
+          &:before {
+            transition-delay: $delay;
+          }
+        }
+      }
+      &:before {
+        opacity: 0;
+      }
+    }
+  }
+
+  & ~ .main-sec {
+    padding-top: 30px;
+
+    &:before {
+      background-color: rgba(252, 245, 244, 0);
+    }
+  }
+}
+.button-toggle {
+  position: absolute;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 25px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 100%;
+  transition: $transition-duration + 0.1;
+  &:hover {
+    box-shadow: 0 0 0 8px rgba(252, 245, 244, 0.4),
+      inset 0 0 0 20px rgba(252, 245, 244, 0.4);
+  }
+  &:before,
+  &:after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $rose;
+    border-radius: 5px;
+    transition: $transition-duration;
+  }
+  &:before {
+    transform: translateY(-50%) rotate(45deg) scale(0);
+  }
+  &:after {
+    transform: translateY(50%) rotate(-45deg) scale(0);
+  }
+}
+
+.nav {
+  display: inline-block;
+  margin: 25px 25px 20px;
+  pointer-events: none;
+  transition: $transition-duration;
+}
+
+.nav-item {
+  position: relative;
+  display: inline-block;
+  float: left;
+  clear: both;
+  color: transparent;
+  font-size: 18px;
+  letter-spacing: -6.2px;
+  height: 10px;
+  line-height: 7px;
+  text-transform: uppercase;
+  font-weight: 300;
+  white-space: nowrap;
+  transform: scaleY(0.2);
+  transition: $transition-duration, opacity 1s;
+
+  @for $i from 1 through $items {
+    &:nth-child(#{$i}) {
+      $delay: ($i - 1) * $transition-delay;
+      transition-delay: $delay;
+      &:before {
+        transition-delay: $delay;
+      }
+    }
+  }
+  &:nth-child(1) {
+    letter-spacing: -8px;
+  }
+
+  &:nth-child(2) {
+    letter-spacing: -7px;
+  }
+  &:nth-child(n + 4) {
+    letter-spacing: -8px;
+    margin-top: -7px;
+    opacity: 0;
+  }
+  &:before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $rose;
+    transform: translateY(-50%) scaleY(5);
+    transition: $transition-duration;
+  }
+}
+
+/* MOBILE SUPPORT */
+
+@media only screen and (max-width: 800px) {
+  .nav-container {
+    position: relative;
+    background-color: $softp;
+    overflow: hidden;
+  }
+  .nav-bar {
+    float: right;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 15px;
+  }
+  header h1 {
+    font-size: 25px;
+    color: $rose;
+  }
+  .header-link {
+    text-decoration: none;
+  }
+  #toggle {
+    display: none;
+  }
+  #toggle:checked {
+    & ~ .toggle-container .button-toggle {
+      box-shadow: 0 0 0 500px rgba(252, 245, 244, 0.1),
+        inset 0 0 0 20px rgba(252, 245, 244, 0.1);
+
+      &:before {
+        -webkit-transform: translateY(-50%) rotate(45deg) scale(1);
+        -moz-transform: translateY(-50%) rotate(45deg) scale(1);
+        transform: translateY(-50%) rotate(45deg) scale(1);
+      }
+
+      &:after {
+        -webkit-transform: translateY(-50%) rotate(-45deg) scale(1);
+        -moz-transform: translateY(-50%) rotate(-45deg) scale(1);
+        transform: translateY(-50%) rotate(-45deg) scale(1);
+      }
+    }
+
+    & ~ .nav {
+      margin-bottom: 50px;
+      pointer-events: auto;
+      transform: translate(20px, 20px);
+      .nav-item {
+        color: $rose;
+        letter-spacing: 0;
+        height: 30px;
+        line-height: 40px;
+        margin-top: 0;
+        opacity: 1;
+        transform: scaleY(1);
+        transition: $transition-duration, opacity 0.1s;
+
+        @for $i from 1 through $items {
+          &:nth-child(#{$i}) {
+            $delay: ($items - $i) * $transition-delay;
+            transition-delay: $delay;
+            &:before {
+              transition-delay: $delay;
+            }
+          }
+        }
+        &:before {
+          opacity: 0;
+        }
+      }
+    }
+
+    & ~ .main-sec {
+      padding-top: 30px;
+
+      &:before {
+        background-color: rgba(252, 245, 244, 0);
+      }
+    }
+  }
+  .button-toggle {
+    position: absolute;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 25px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 100%;
+    transition: $transition-duration + 0.1;
+    &:hover {
+      box-shadow: 0 0 0 8px rgba(252, 245, 244, 0.4),
+        inset 0 0 0 20px rgba(252, 245, 244, 0.4);
+    }
+    &:before,
+    &:after {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $rose;
+      border-radius: 5px;
+      transition: $transition-duration;
+    }
+    &:before {
+      transform: translateY(-50%) rotate(45deg) scale(0);
+    }
+    &:after {
+      transform: translateY(50%) rotate(-45deg) scale(0);
+    }
+  }
+
+  .nav {
+    display: inline-block;
+    margin: 25px 25px 20px;
+    pointer-events: none;
+    transition: $transition-duration;
+  }
+
+  .nav-item {
+    position: relative;
+    display: inline-block;
+    float: left;
+    clear: both;
+    color: transparent;
+    font-size: 14px;
+    letter-spacing: -6.2px;
+    height: 7px;
+    line-height: 7px;
+    text-transform: uppercase;
+    font-weight: 300;
+    white-space: nowrap;
+    transform: scaleY(0.2);
+    transition: $transition-duration, opacity 1s;
+
+    @for $i from 1 through $items {
+      &:nth-child(#{$i}) {
+        $delay: ($i - 1) * $transition-delay;
+        transition-delay: $delay;
+        &:before {
+          transition-delay: $delay;
+        }
+      }
+    }
+    &:nth-child(1) {
+      letter-spacing: -8px;
+    }
+
+    &:nth-child(2) {
+      letter-spacing: -7px;
+    }
+    &:nth-child(n + 4) {
+      letter-spacing: -8px;
+      margin-top: -7px;
+      opacity: 0;
+    }
+    &:before {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $rose;
+      transform: translateY(-50%) scaleY(5);
+      transition: $transition-duration;
+    }
+  }
 }

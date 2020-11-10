@@ -1,18 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap");
-
-$salmon: #ffa384;
-$aqua: #74bdcb;
-$babyb: #e7f2f8;
-$fresia: #efe7bc;
-
 $text: #494548;
 $mutedb: #d69453;
 $softp: #fcf4f4;
 $rose: #f4a99f;
-
 $maroon: #750f0f;
 $forange: #ce8031;
-
 * {
   padding: 0;
   margin: 0;
@@ -37,48 +29,45 @@ button {
   display: flex;
   width: 80%;
   margin: 15px auto;
-  min-height: 80vh;
-  // background-color: #fcf5f4;
+  background-color: #fcf5f4;
   animation: fade 2.5s ease;
 }
 .intro-container {
-  flex: 1;
   min-height: 80vh;
   padding: 25px;
-  // box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
   border-radius: 3px;
-}
-.img-container {
-  text-align: right;
-  display: inline;
-}
-.img-container img {
-  border-radius: 1vw;
-  position: absolute;
-  float: right;
-  padding: 25px;
-  height: 55%;
-  top: 35%;
-  right: 20%;
-  z-index: 2;
-  opacity: 0.9;
+  h1 {
+    font-size: 40px;
+    animation: drop 0.5s ease;
+    text-align: center;
+    color: $maroon;
+  }
 }
 .intro {
   font-size: 20px;
   font-weight: 100;
-  z-index: 6;
-}
-.intro h1 {
-  font-size: 40px;
-  animation: drop 0.5s ease;
+  width: 80%;
   text-align: center;
+  margin: 15px auto;
+  p {
+    margin: 0;
+    color: $text;
+  }
+  h2 {
+    padding: 15px;
+  }
+  strong {
+    color: $forange;
+  }
 }
-.intro p {
-  margin: 0;
-  color: $text;
-}
+
+/* button*/
 .btn-container {
-  padding: 50px 0px 0px 0px;
+  display: flex;
+  margin: 20px 0;
+  justify-content: center;
+  align-items: center;
 }
 .start-btn {
   padding: 1.25em 2em;
@@ -90,40 +79,40 @@ button {
   background: #fff0f0;
   transform-style: preserve-3d;
   transition: 0.15s cubic-bezier(0, 0, 0.6, 1);
-}
-.start-btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: inherit;
-  background: $mutedb;
-  box-shadow: 0 0 0 2px $maroon, 0 0.625em 0 0 $forange;
-  transform: translate3d(0, 0.75em, -1em);
-  transition: 0.15s cubic-bezier(0, 0, 0.6, 1);
-}
-.start-btn:hover {
-  background: $maroon;
-  color: #fff;
-  transform: translate(0, 0.25em);
-}
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background: $mutedb;
+    box-shadow: 0 0 0 2px $maroon, 0 0.625em 0 0 $forange;
+    transform: translate3d(0, 0.75em, -1em);
+    transition: 0.15s cubic-bezier(0, 0, 0.6, 1);
+  }
+  &:hover {
+    background: $maroon;
+    color: #fff;
+    transform: translate(0, 0.25em);
+  }
 
-.start-btn:hover::before {
-  box-shadow: 0 0 0 2px $maroon, 0 0.5em 0 0 $forange;
-  transform: translate3d(0, 0.5em, -1em);
-}
-.start-btn:active {
-  background: #ffe9e9;
-  transform: translate(0, 0.75em);
-}
+  &:hover::before {
+    box-shadow: 0 0 0 2px $maroon, 0 0.5em 0 0 $forange;
+    transform: translate3d(0, 0.5em, -1em);
+  }
+  &:active {
+    background: #ffe9e9;
+    transform: translate(0, 0.75em);
+  }
 
-.start-btn:active::before {
-  box-shadow: 0 0 0 2px $maroon, 0 0 $forange;
-  transform: translate3d(0, 0, -1em);
+  &:active::before {
+    box-shadow: 0 0 0 2px $maroon, 0 0 $forange;
+    transform: translate3d(0, 0, -1em);
+  }
 }
 
 /* RESULT PAGE */
@@ -177,7 +166,14 @@ button {
   }
 }
 
-/* SPINNER */
+/* SPINNER/LOAD SCREEN */
+.load {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
 .loader {
   color: $forange;
   font-size: 20px;

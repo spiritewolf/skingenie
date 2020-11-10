@@ -1,4 +1,3 @@
-/*home*/
 @media screen and (max-width: 862px) {
   * {
     padding: 0;
@@ -12,6 +11,11 @@
   h1 {
     font-size: 25px;
     color: #750f0f;
+  }
+
+  h2 {
+    font-size: 20px;
+    padding: 10px;
   }
 
   .container {
@@ -34,17 +38,14 @@
     min-height: 65vh;
     padding: 5px;
   }
-
-  .text-section {
+  .main-container .text-section {
     margin: 10px;
   }
-
-  .text-section p {
-    font-size: 13px;
+  .main-container .text-section p {
+    font-size: 15px;
     font-weight: 100;
     margin: 0;
   }
-
   .main-container .surv {
     margin: 15px;
   }
@@ -110,198 +111,44 @@
   padding: 15px;
 }
 
-/*NAVIGATION*/
-@media only screen and (max-width: 862px) {
-  .nav-container {
-    position: relative;
-    background-color: #fcf4f4;
-    overflow: hidden;
+@media screen and (max-width: 800px) {
+  /*survey*/
+  .s-main {
+    width: 100%;
   }
 
-  .nav-bar {
-    float: right;
-    justify-content: center;
-    align-items: center;
+  .s-container {
+    width: 95%;
     margin: auto;
-    padding: 15px;
+    overflow: scroll;
+    flex-direction: row;
   }
 
-  header h1 {
-    font-size: 25px;
-    color: #750f0f;
+  .s-main h1 {
+    text-align: center;
+    font-size: 26px;
   }
 
-  .header-link {
-    text-decoration: none;
+  .s-main p {
+    text-align: center;
+    font-size: 13px;
   }
 
-  #toggle {
-    display: none;
-  }
-
-  #toggle:checked ~ .toggle-container .button-toggle {
-    box-shadow: 0 0 0 500px rgba(252, 245, 244, 0.1), inset 0 0 0 20px rgba(252, 245, 244, 0.1);
-  }
-  #toggle:checked ~ .toggle-container .button-toggle:before {
-    -webkit-transform: translateY(-50%) rotate(45deg) scale(1);
-    -moz-transform: translateY(-50%) rotate(45deg) scale(1);
-    transform: translateY(-50%) rotate(45deg) scale(1);
-  }
-  #toggle:checked ~ .toggle-container .button-toggle:after {
-    -webkit-transform: translateY(-50%) rotate(-45deg) scale(1);
-    -moz-transform: translateY(-50%) rotate(-45deg) scale(1);
-    transform: translateY(-50%) rotate(-45deg) scale(1);
-  }
-  #toggle:checked ~ .nav {
-    margin-bottom: 50px;
-    pointer-events: auto;
-    transform: translate(20px, 20px);
-  }
-  #toggle:checked ~ .nav .nav-item {
-    color: #750f0f;
-    letter-spacing: 0;
-    height: 30px;
-    line-height: 40px;
-    margin-top: 0;
-    opacity: 1;
-    transform: scaleY(1);
-    transition: 0.5s, opacity 0.1s;
-  }
-  #toggle:checked ~ .nav .nav-item:nth-child(1) {
-    transition-delay: 0.15s;
-  }
-  #toggle:checked ~ .nav .nav-item:nth-child(1):before {
-    transition-delay: 0.15s;
-  }
-  #toggle:checked ~ .nav .nav-item:nth-child(2) {
-    transition-delay: 0.1s;
-  }
-  #toggle:checked ~ .nav .nav-item:nth-child(2):before {
-    transition-delay: 0.1s;
-  }
-  #toggle:checked ~ .nav .nav-item:nth-child(3) {
-    transition-delay: 0.05s;
-  }
-  #toggle:checked ~ .nav .nav-item:nth-child(3):before {
-    transition-delay: 0.05s;
-  }
-  #toggle:checked ~ .nav .nav-item:nth-child(4) {
-    transition-delay: 0s;
-  }
-  #toggle:checked ~ .nav .nav-item:nth-child(4):before {
-    transition-delay: 0s;
-  }
-  #toggle:checked ~ .nav .nav-item:before {
-    opacity: 0;
-  }
-  #toggle:checked ~ .main-sec {
-    padding-top: 30px;
-  }
-  #toggle:checked ~ .main-sec:before {
-    background-color: rgba(252, 245, 244, 0);
-  }
-
-  .button-toggle {
-    position: absolute;
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin: 25px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    border-radius: 100%;
-    transition: 0.6s;
-  }
-  .button-toggle:hover {
-    box-shadow: 0 0 0 8px rgba(252, 245, 244, 0.4), inset 0 0 0 20px rgba(252, 245, 244, 0.4);
-  }
-  .button-toggle:before, .button-toggle:after {
-    position: absolute;
-    content: "";
-    top: 50%;
-    left: 0;
+  .radiogroup {
     width: 100%;
-    height: 2px;
-    background-color: #750f0f;
-    border-radius: 5px;
-    transition: 0.5s;
-  }
-  .button-toggle:before {
-    transform: translateY(-50%) rotate(45deg) scale(0);
-  }
-  .button-toggle:after {
-    transform: translateY(50%) rotate(-45deg) scale(0);
+    padding: 20px;
   }
 
-  .nav {
-    display: inline-block;
-    margin: 25px 25px 20px;
-    pointer-events: none;
-    transition: 0.5s;
-  }
-
-  .nav-item {
-    position: relative;
-    display: inline-block;
-    float: left;
-    clear: both;
-    color: transparent;
-    font-size: 14px;
-    letter-spacing: -6.2px;
-    height: 7px;
-    line-height: 7px;
-    text-transform: uppercase;
+  .radiogroup h3 {
+    text-align: center;
+    font-size: 15px;
     font-weight: 300;
-    white-space: nowrap;
-    transform: scaleY(0.2);
-    transition: 0.5s, opacity 1s;
+    opacity: 85%;
   }
-  .nav-item:nth-child(1) {
-    transition-delay: 0s;
-  }
-  .nav-item:nth-child(1):before {
-    transition-delay: 0s;
-  }
-  .nav-item:nth-child(2) {
-    transition-delay: 0.05s;
-  }
-  .nav-item:nth-child(2):before {
-    transition-delay: 0.05s;
-  }
-  .nav-item:nth-child(3) {
-    transition-delay: 0.1s;
-  }
-  .nav-item:nth-child(3):before {
-    transition-delay: 0.1s;
-  }
-  .nav-item:nth-child(4) {
-    transition-delay: 0.15s;
-  }
-  .nav-item:nth-child(4):before {
-    transition-delay: 0.15s;
-  }
-  .nav-item:nth-child(1) {
-    letter-spacing: -8px;
-  }
-  .nav-item:nth-child(2) {
-    letter-spacing: -7px;
-  }
-  .nav-item:nth-child(n+4) {
-    letter-spacing: -8px;
-    margin-top: -7px;
-    opacity: 0;
-  }
-  .nav-item:before {
-    position: absolute;
-    content: "";
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #750f0f;
-    transform: translateY(-50%) scaleY(5);
-    transition: 0.5s;
+
+  .radiogroup label {
+    font-weight: 200;
+    font-size: 14px;
   }
 }
 

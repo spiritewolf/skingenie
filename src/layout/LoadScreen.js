@@ -16,7 +16,7 @@ export const LoadScreen = () => {
   return (
     <div className="main-sec">
       <div
-        className="intro"
+        className="load"
         aria-live="polite"
         aria-automatic="true"
         aria-label="Loading..."

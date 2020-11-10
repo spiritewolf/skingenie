@@ -6,12 +6,19 @@ export const MobileHome = () => {
   return (
     <div className="container">
       <div className="main-container">
+        <h1>Skin Genie, acheive your ideal skin.</h1>
         <div className="text-section" aria-label="Site Description">
-          <h1> Welcome! Lets get your skincare routine together</h1>
+          <h2> Lets get your skin care routine together!</h2>
           <p>
-            Skin Genie is a tool created to help you perfect your skincare
-            routine. After filling out a brief survey, our algorithm will
-            suggest you the best product line-up for the job.
+            <strong>What it is: </strong>Skin Genie is a tool created to help
+            you perfect your skincare routine. No magic, just skincare!
+          </p>
+          <p>
+            <strong>How it works: </strong> We've created a brief questionairre
+            for you to fill out. It will assess your skin type, skin concerns,
+            and skin goals. Once you've filled that out it is processed through
+            our recommendation algorithm to pair you up with the best product
+            line-up for the job!
           </p>
         </div>
         <div className="btn-container">
