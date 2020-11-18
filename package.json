@@ -14,11 +14,10 @@
     "react-scripts": "3.4.3"
   },
   "scripts": {
-    "start": "yarn start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "postinstall": "yarn build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
