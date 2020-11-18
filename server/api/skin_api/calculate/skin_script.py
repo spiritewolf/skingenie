@@ -88,7 +88,6 @@ def get_results(json_string):
     # result = []
     cleanser,serum,moisturizer,sunscreen = ('' for _ in range(4))
     while i < len(list):
-        # result.append({'category': list[i]['category'], 'name': list[i]['name'], 'details': list[i]['details']})
         if list[i]['category'] == 'cleanser':
             cleanser = [list[i]['name'],list[i]['details']]
         if list[i]['category'] == 'serum':
