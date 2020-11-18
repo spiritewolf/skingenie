@@ -13,7 +13,7 @@ SECRET_KEY = 'cns)c38m!ckeb=p%zvci1il&m#3-7t96t+p-ggh37sb_3$vuz='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*', 'https://skingenie.herokuapp.com/']
+ALLOWED_HOSTS = ['*', 'https://skin-genie.herokuapp.com']
 CORS_ORIGIN_ALLOW_ALL = True
 
 # Application definition
