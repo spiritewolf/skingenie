@@ -12,6 +12,10 @@ import os
 from ..serializers import ResultSerializer
 from ..models import SkinCare
 
+#if you're reading this,
+#( ͡° ͜ʖ ͡°) hey.
+#one might call that a sign.
+
 def cosine_similarity_of(text1, text2):
         #get words first
         first = re.compile(r"[\w']+").findall(text1)
