@@ -1,11 +1,11 @@
 export default (state, action) => {
   switch (action.type) {
-    case "GET_RESPONSE":
+    case 'GET_RESPONSE':
       return {
         ...state,
         responses: action.payload,
       };
-    case "GET_RESULTS":
+    case 'GET_RESULTS':
       return {
         ...state,
         result: action.payload,

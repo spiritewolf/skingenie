@@ -5,6 +5,12 @@
 /.pnp
 .pnp.js
 src/imgs
+/server/env*
+/server/api/manager/__pycache__
+/server/api/skin_api/__pycache__
+/server/api/skin_api/migrations
+/server/db.sqlite3
+/server/api/skin_api/calculate/__pycache__
 
 # testing
 /coverage

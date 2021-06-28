@@ -1,15 +1,15 @@
-import React, { useReducer, createContext } from "react";
-import SurveyReducer from "./SurveyReducer";
-import * as api from "../api/apiconfig";
-import axios from "axios";
+import React, { useReducer, createContext } from 'react';
+import SurveyReducer from './SurveyReducer';
+import * as api from '../api/apiconfig';
+import axios from 'axios';
 
 const initialState = {
-  responses: "",
-  result: "",
-  cleanser: "",
-  serum: "",
-  moisturizer: "",
-  sunscreen: "",
+  responses: '',
+  result: '',
+  cleanser: '',
+  serum: '',
+  moisturizer: '',
+  sunscreen: '',
 };
 
 export const SurveyContext = createContext(initialState);
@@ -17,38 +17,40 @@ export const SurveyContext = createContext(initialState);
 export const SurveyProvider = ({ children }) => {
   const [state, dispatch] = useReducer(SurveyReducer, initialState);
 
+  const config = {
+	headers: {
+	  'Content-Type': 'application/json',
+	},
+  };
+
   const getResults = async () => {
-    const config = {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
     try {
       const res = await axios.get(api.RESULT, config);
-      dispatch({
-        type: "GET_RESULTS",
-        payload: res.data,
-      });
-    } catch (err) {
-      console.log(err);
+	  if (res.data) {
+		  dispatch({
+            type: 'GET_RESULTS',
+            payload: res.data,
+          }); 
+	  }
+    } catch (e) {
+      console.log(e);
+	  throw e;
     }
   };
 
   const getResponses = async (input) => {
-    const config = {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
     try {
-      const score = JSON.stringify(input);
+      let score = JSON.stringify(input);
       const res = await axios.post(api.INPUT, score, config);
-      dispatch({
-        type: "GET_RESPONSE",
-        payload: res,
-      });
-    } catch (err) {
-      console.log(err);
+	  if (res.data) {
+		  dispatch({
+	        type: 'GET_RESPONSE',
+	        payload: res,
+	      });
+	  }
+    } catch (e) {
+      console.log(e);
+	  throw e;
     }
   };
 
