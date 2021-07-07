@@ -1,7 +1,7 @@
-import React, { useState, useContext, useEffect } from "react";
-import { SurveyContext } from "../../context/SurveyState";
-import { useHistory } from "react-router-dom";
-import "../../css/App.css";
+import React, { useState, useContext, useEffect } from 'react';
+import { SurveyContext } from '../../context/SurveyState';
+import { useHistory } from 'react-router-dom';
+import '../../css/App.css';
 
 export const DesktopResult = () => {
   const { getResults, result, cleanser, serum, moisturizer, sunscreen } = useContext(SurveyContext);

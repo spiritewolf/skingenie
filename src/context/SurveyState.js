@@ -4,7 +4,7 @@ import * as api from '../api/apiconfig';
 import axios from 'axios';
 
 const initialState = {
-  responses: '',
+  scores: null,
   result: '',
   cleanser: '',
   serum: '',
@@ -30,7 +30,7 @@ export const SurveyProvider = ({ children }) => {
 		  dispatch({
             type: 'GET_RESULTS',
             payload: res.data,
-          }); 
+          });
 	  }
     } catch (e) {
       console.log(e);
@@ -54,15 +54,30 @@ export const SurveyProvider = ({ children }) => {
     }
   };
 
+  const addScore = (score) => {
+	  if (score) {
+		  dispatch({
+			  type: 'ADD_SCORE',
+			  payload: score
+		  })
+	  }
+  }
+
+  const clearScores = () => {
+	  dispatch({ type: 'CLEAR_SCORES' });
+  }
+
   return (
     <SurveyContext.Provider
       value={{
-        responses: state.responses,
+        scores: state.scores,
         result: state.result,
         cleanser: state.cleanser,
         serum: state.serum,
         moisturizer: state.moisturizer,
         sunscreen: state.sunscreen,
+		addScore,
+		clearScores,
         getResponses,
         getResults,
       }}

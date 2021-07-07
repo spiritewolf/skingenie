@@ -14,6 +14,18 @@ export default (state, action) => {
         serum: action.payload[0].serum,
         sunscreen: action.payload[0].sunscreen,
       };
+	 case 'ADD_SCORE':
+	 	return {
+			...state,
+			scores: state.scores != null ? [...state.scores, action.payload] : action.payload,
+			...action.payload
+		}
+	case 'CLEAR_SCORES':
+		return {
+			...state,
+			scores: null,
+			...action.payload
+		}
     default:
       return state;
   }
